@@ -92,6 +92,7 @@ resource "aws_instance" "project-iac" {
   depends_on = [ aws_security_group.project-iac-sg ]
 }
 
+#Output of IP Addresses are separated with comma
 output "ec2instance_ips" {
     value = "${join(",", aws_instance.project-iac.*.public_ip)}"
 }
