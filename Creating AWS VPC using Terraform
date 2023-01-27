@@ -50,7 +50,7 @@ resource "aws_subnet" "public_subnets" {
  }
 }
 
-#Create Public Subnet
+#Create Private Subnet
 resource "aws_subnet" "private_subnets" {
  count      = length(var.private_subnet_cidrs)
  vpc_id     = aws_vpc.Production.id
